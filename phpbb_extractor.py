@@ -117,15 +117,6 @@ def prepare_urls_to_visit():
         f.write("\n".join(all_urls) + "\n")
 
 
-def print_forum_pages(forum_pages, construct_url):
-    for f, starts in forum_pages.items():
-        for start in starts:
-            print(extract_topics(construct_url(f, start)))
-
-
-# print_forum_pages(forum_pages, construct_forum_url)
-
-
 def extract_text(posts: set):
     content_list = list()
     for post in posts:
