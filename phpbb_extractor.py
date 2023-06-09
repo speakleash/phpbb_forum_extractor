@@ -49,7 +49,6 @@ def find_links(content, query_param, isType):
     return urls
 
 
-# download forums urls
 def extract_forums(url, session=requests.Session()):
     forums = set()
 
@@ -101,7 +100,6 @@ def prepare_urls_to_visit():
         cur_forum = parse_forum_topic_page(forum_url)
         if cur_forum["f"] not in forums_to_visit or forums_to_visit[cur_forum["f"]] < cur_forum["start"]:
             forums_to_visit[cur_forum["f"]] = cur_forum["start"]
-    # forums_to_visit = extract_pages_to_visit(forums_to_visit, "f")
 
     forums_pages = dict(
         sorted(fill_forum_pages(forums_to_visit, forum_skip).items()))
